@@ -1,0 +1,223 @@
+/* ===== >> Fonts and Icons */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&family=Saira:wght@400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css');
+:root{
+    --header-height: 3.5rem;
+    --main-color-1: hsl(234, 100%, 63%);        /*#4356FF; */
+    --main-color-2: #394896;
+    --main-color-3: #EDD795;
+    --gradient-color-1: #555C80;
+    --gradient-color-2: #0A0A0A;
+    --white-color: #FFF;
+    --white-shadow: #CCCED4;
+    --shadow-text: 0 1px 1px var(--white-shadow);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Roboto";
+    --second-font: "Saira";
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 5.5rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*noinspection CssNoGenericFontName*/
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom right, var(--gradient-color-1), var(--gradient-color-2));
+    color: var(--white-color);
+    /*font: Roboto  400  20px;*/
+}
+ul {
+    list-style: none;
+}
+li {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 90%;
+    margin-inline: auto;
+    /*max-width: 1120px;*/
+    /*margin-inline: 1.5rem;*/
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section {
+    padding-block: 5rem 1rem;
+}
+
+.section__title {
+    font: var(--font-regular) var(--h1-font-size) var(--second-font);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: var(--shadow-text);
+}
+
+.main {
+    overflow: hidden;
+}
+
+/* ====== >> hero
+ */
+.hero {
+    height: 100vh;
+    background-image: url('../img/background-banner.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix background image */
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__container{
+    position: relative;
+    margin-top: 10rem;
+    margin-left: 25rem;
+    text-align: justify-all;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    /*noinspection CssNoGenericFontName*/
+    font-family: var(--second-font);
+}
+.hero__title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--main-color-1);
+    margin:0;
+    /*display: inline-block;*/
+
+}
+.hero__container p{
+    width: 100%;
+    margin: 0;
+    /*noinspection CssNoGenericFontName*/
+    font-family: var(--body-font);
+    font-weight: lighter;
+
+    text-align: justify-all;
+    /*letter-spacing: .46em;*/
+}
+
+/*=============== HEADER & NAV ===============*/
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: box-shadow 0.4s;
+}
+
+.nav{
+    position: relative;
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav__logo{
+    color: var(--white-color);
+    font-family: var(--second-font), sans-serif;
+    text-shadow: var(--shadow-text);
+}
+
+.nav__menu {
+    display: flex;
+    column-gap: 20rem;
+    align-items: center;
+
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 8rem;
+}
+
+.nav__list li a{
+    color: var(--white-color);
+}
+
+.nav__list li a i {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+
+}
+.nav__list li a:hover{
+    color: var(--main-color-1);
+}
+
+.nav__languages{
+    display: flex;
+    column-gap: 1rem;
+    margin-top: auto;
+}
+
+
+.nav__toggle,
+.nav__close {
+    display: none;
+}
+
+.icon {
+    display: inline-block;
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
